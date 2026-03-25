@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Github, Linkedin, Twitter } from "lucide-react"
+import { Menu, X, Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
@@ -19,7 +19,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="text-xl font-bold text-primary">
-          {"<YN />"}
+          {"<KC />"}
         </Link>
 
         {/* Desktop Navigation */}
@@ -42,8 +42,8 @@ export function Header() {
           <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
             <Linkedin className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
           </Link>
-          <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <Twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
+          <Link href="mailto:kimcruz019@gmail.com">
+            <Mail className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
           </Link>
         </div>
 
@@ -79,8 +79,8 @@ export function Header() {
               <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
               </Link>
-              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <Twitter className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
+              <Link href="mailto:kimcruz019@gmail.com">
+                <Mail className="h-5 w-5 text-muted-foreground transition-colors hover:text-primary" />
               </Link>
             </div>
           </div>

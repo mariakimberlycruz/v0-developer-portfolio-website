@@ -1,80 +1,141 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink, Folder } from "lucide-react"
-import Link from "next/link"
+import { Folder } from "lucide-react"
 
-const featuredProjects = [
+const felcoProjects = [
   {
-    title: "E-Commerce Platform",
-    description:
-      "A full-stack e-commerce platform with user authentication, payment processing, and inventory management. Built with a focus on performance and user experience.",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Prisma"],
-    github: "https://github.com",
-    live: "https://example.com",
-    image: "/projects/ecommerce.png",
+    title: "Performance Dashboard",
+    description: "Backend development for performance analytics dashboard, providing real-time insights and KPI tracking.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
   },
   {
-    title: "Task Management App",
-    description:
-      "A collaborative task management application with real-time updates, drag-and-drop functionality, and team workspaces. Features intuitive UI and powerful filtering.",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Redux"],
-    github: "https://github.com",
-    live: "https://example.com",
-    image: "/projects/taskapp.png",
+    title: "Sales and Return System",
+    description: "Backend system for managing sales transactions and product returns with data integrity.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
   },
   {
-    title: "AI Content Generator",
-    description:
-      "An AI-powered content generation tool that helps create blog posts, social media content, and marketing copy using OpenAI's GPT models.",
-    technologies: ["Next.js", "OpenAI API", "Tailwind CSS", "Vercel AI SDK"],
-    github: "https://github.com",
-    live: "https://example.com",
-    image: "/projects/aicontent.png",
+    title: "Expense Revamp",
+    description: "Complete backend overhaul of the expense management system for improved efficiency.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+  },
+  {
+    title: "Product Carousel",
+    description: "Backend implementation for dynamic product display and catalog management.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+  },
+  {
+    title: "Performance Dashboard Phase 2",
+    description: "Extended features and optimizations for the performance analytics platform.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+  },
+  {
+    title: "Main Sync Revamp",
+    description: "Backend system for synchronizing data across multiple platforms and databases.",
+    technologies: ["ASP.Net MVC", "C#", "Data Sync"],
   },
 ]
 
-const otherProjects = [
+const hospitalProjects = [
   {
-    title: "Weather Dashboard",
-    description: "A sleek weather dashboard with location-based forecasts and interactive maps.",
-    technologies: ["React", "Weather API", "Chart.js"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Room Management System",
+    description: "Web-based system for hospital room allocation, tracking, and management.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
   },
   {
-    title: "Portfolio Template",
-    description: "A customizable portfolio template for developers with dark mode support.",
-    technologies: ["Next.js", "MDX", "Tailwind CSS"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Queuing System",
+    description: "Patient queuing and management system for improved hospital workflow.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
   },
   {
-    title: "Chat Application",
-    description: "Real-time chat application with end-to-end encryption and file sharing.",
-    technologies: ["React", "Firebase", "WebRTC"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Sacred Heart Website Revamp",
+    description: "Complete redesign and development of the hospital's official website.",
+    technologies: ["ASP.Net MVC", "C#", "Bootstrap"],
   },
   {
-    title: "Markdown Editor",
-    description: "A minimalist markdown editor with live preview and export functionality.",
-    technologies: ["TypeScript", "React", "CodeMirror"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Document Management System",
+    description: "Digital document storage, retrieval, and management for hospital records.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
   },
   {
-    title: "URL Shortener",
-    description: "A URL shortening service with analytics and custom link management.",
-    technologies: ["Node.js", "Redis", "PostgreSQL"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "IT Ticketing System",
+    description: "Internal ticketing system for IT support requests and issue tracking.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
   },
   {
-    title: "Recipe Finder",
-    description: "A recipe search app with filters for dietary restrictions and ingredients.",
-    technologies: ["Vue.js", "Spoonacular API", "Vuex"],
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Clinical System",
+    description: "Comprehensive clinical management system for patient care and records.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+  },
+  {
+    title: "Billing Portal",
+    description: "Patient billing and payment management portal with reporting features.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+  },
+  {
+    title: "One Login",
+    description: "Single sign-on solution for unified access across hospital systems.",
+    technologies: ["ASP.Net MVC", "C#", "Authentication"],
+  },
+  {
+    title: "Administrator Access",
+    description: "Role-based access control system for hospital administration.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+  },
+  {
+    title: "HR E-Learning",
+    description: "E-learning platform for hospital staff training and development.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+  },
+  {
+    title: "Central Ticketing",
+    description: "Centralized ticketing system for hospital-wide issue management.",
+    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+  },
+  {
+    title: "ER Decking System",
+    description: "Emergency room patient decking and management application.",
+    technologies: ["C# Windows Forms", "MS SQL"],
+  },
+]
+
+const jotformProjects = [
+  {
+    title: "AR Approval",
+    description: "Automated accounts receivable approval workflow.",
+    technologies: ["JotForm", "Workflow Automation"],
+  },
+  {
+    title: "HMO Approval",
+    description: "HMO request and approval management system.",
+    technologies: ["JotForm", "Workflow Automation"],
+  },
+  {
+    title: "LOA Approval",
+    description: "Letter of Authorization approval workflow system.",
+    technologies: ["JotForm", "Workflow Automation"],
+  },
+]
+
+const academicProjects = [
+  {
+    title: "COMRAD Robotic Dog Companion",
+    description: "Capstone project - A robotic dog companion with sensors and interactive features.",
+    technologies: ["Arduino", "Sensors", "Electronics"],
+  },
+  {
+    title: "Electronic Cafeteria",
+    description: "Point-of-sale and inventory management system for cafeteria operations.",
+    technologies: ["VB Forms", "Database"],
+  },
+  {
+    title: "Plantita Halamanan",
+    description: "E-commerce website for plant selling and gardening supplies.",
+    technologies: ["WordPress", "E-commerce"],
+  },
+  {
+    title: "Payroll System (OJT)",
+    description: "Payroll management system developed during internship at Chooseyourshoes Ph Inc.",
+    technologies: ["C# Windows Forms", "MS SQL"],
   },
 ]
 
@@ -83,117 +144,157 @@ export function Projects() {
     <section id="projects" className="py-24 px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-2xl font-bold text-foreground">Featured Projects</h2>
+          <h2 className="text-2xl font-bold text-foreground">Accomplished Projects</h2>
           <div className="flex-1 h-px bg-border" />
         </div>
 
-        {/* Featured Projects */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-20">
-          {featuredProjects.map((project, index) => (
-            <Card
-              key={index}
-              className="bg-card border-border hover:border-primary/50 transition-all group"
-            >
-              <CardHeader>
-                <div className="flex items-center justify-between mb-4">
-                  <Folder className="h-10 w-10 text-primary" />
-                  <div className="flex items-center gap-3">
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <Github className="h-5 w-5" />
-                    </Link>
-                    <Link
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <ExternalLink className="h-5 w-5" />
-                    </Link>
+        {/* FELCO Projects */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <Badge variant="outline" className="text-primary border-primary">FELCO</Badge>
+            <h3 className="text-lg font-semibold text-foreground">Firefly Electric and Lighting Corporation</h3>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {felcoProjects.map((project, index) => (
+              <Card
+                key={index}
+                className="bg-card border-border hover:border-primary/50 transition-all group"
+              >
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Folder className="h-5 w-5 text-primary" />
+                    <Badge variant="secondary" className="text-xs">Backend</Badge>
                   </div>
-                </div>
-                <CardTitle className="text-foreground group-hover:text-primary transition-colors">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="text-muted-foreground leading-relaxed">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs font-mono text-muted-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="text-xs font-mono text-muted-foreground">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
-        {/* Other Projects */}
-        <div className="flex items-center gap-4 mb-12">
-          <h3 className="text-xl font-bold text-foreground">Other Noteworthy Projects</h3>
-          <div className="flex-1 h-px bg-border" />
+        {/* Hospital Projects */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <Badge variant="outline" className="text-primary border-primary">SHHMI</Badge>
+            <h3 className="text-lg font-semibold text-foreground">Sacred Heart Hospital of Malolos Inc.</h3>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {hospitalProjects.map((project, index) => (
+              <Card
+                key={index}
+                className="bg-card/50 border-border hover:border-primary/50 transition-all group"
+              >
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Folder className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="text-xs font-mono text-muted-foreground">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {otherProjects.map((project, index) => (
-            <Card
-              key={index}
-              className="bg-card/50 border-border hover:border-primary/50 transition-all group"
-            >
-              <CardHeader className="pb-2">
-                <div className="flex items-center justify-between mb-2">
-                  <Folder className="h-6 w-6 text-primary" />
-                  <div className="flex items-center gap-3">
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <Github className="h-4 w-4" />
-                    </Link>
-                    <Link
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                    </Link>
+        {/* JotForm Projects */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <Badge variant="outline" className="text-primary border-primary">Automation</Badge>
+            <h3 className="text-lg font-semibold text-foreground">JotForm Workflow Automations</h3>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {jotformProjects.map((project, index) => (
+              <Card
+                key={index}
+                className="bg-card/50 border-border hover:border-primary/50 transition-all group"
+              >
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Folder className="h-5 w-5 text-primary" />
                   </div>
-                </div>
-                <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="text-sm text-muted-foreground">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs font-mono text-muted-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="text-xs font-mono text-muted-foreground">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Academic Projects */}
+        <div>
+          <div className="flex items-center gap-3 mb-6">
+            <Badge variant="outline" className="text-primary border-primary">Academic</Badge>
+            <h3 className="text-lg font-semibold text-foreground">{"Dr. Yanga's College, Inc. & OJT"}</h3>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {academicProjects.map((project, index) => (
+              <Card
+                key={index}
+                className="bg-card/50 border-border hover:border-primary/50 transition-all group"
+              >
+                <CardHeader className="pb-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Folder className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="text-xs font-mono text-muted-foreground">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

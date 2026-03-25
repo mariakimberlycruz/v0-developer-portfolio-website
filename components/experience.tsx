@@ -1,36 +1,62 @@
 "use client"
 
 import { Badge } from "@/components/ui/badge"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, Download } from "lucide-react"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 const experiences = [
   {
-    period: "2023 — Present",
-    title: "Senior Frontend Engineer",
-    company: "Tech Company",
-    url: "https://example.com",
-    description:
-      "Lead development of the core product interface, implementing new features and optimizing performance. Collaborate with cross-functional teams to deliver high-quality user experiences.",
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL", "Tailwind CSS"],
+    period: "June 2025 — Present",
+    title: "IT Software Engineer 2",
+    company: "Firefly Electric and Lighting Corporation (FELCO)",
+    location: "Ermita Manila",
+    description: [
+      "Architected and optimized complex database systems for web and mobile applications.",
+      "Led database normalization, indexing, and query optimization, reducing response times.",
+      "Designed and maintained secure RESTful APIs for internal and third-party integrations.",
+      "Managed Data Warehouse architecture, ETL pipelines, and reporting frameworks.",
+      "Provided technical guidance and mentoring on database design and API security.",
+      "Supported data-related concerns, ensuring 100% data integrity and accurate reporting.",
+    ],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "RESTful APIs", "Data Warehouse", "ETL"],
   },
   {
-    period: "2021 — 2023",
-    title: "Full Stack Developer",
-    company: "Digital Agency",
-    url: "https://example.com",
-    description:
-      "Built and maintained multiple client projects from concept to deployment. Worked closely with designers and project managers to deliver pixel-perfect implementations.",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Docker"],
+    period: "May 2024 — June 2025",
+    title: "IT Supervisor - Software Development",
+    company: "Sacred Heart Hospital of Malolos Inc.",
+    location: "Malolos City",
+    description: [
+      "Led software development projects from planning to deployment.",
+      "Managed and mentored developers, ensuring adherence to coding standards.",
+      "Designed system architecture and specifications, implementing advanced SQL scripting and database solutions.",
+      "Conducted user and technical training sessions and delivered post-implementation support.",
+    ],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "Team Leadership", "System Architecture"],
   },
   {
-    period: "2019 — 2021",
-    title: "Frontend Developer",
-    company: "Startup Inc",
-    url: "https://example.com",
-    description:
-      "Developed responsive web applications and contributed to the company's design system. Implemented A/B testing and analytics to improve user engagement.",
-    technologies: ["JavaScript", "Vue.js", "SCSS", "Firebase"],
+    period: "Jan 2023 — May 2024",
+    title: "Sr. Software Developer",
+    company: "Sacred Heart Hospital of Malolos Inc.",
+    location: "Malolos City",
+    description: [
+      "Developed and maintained enterprise healthcare applications.",
+      "Implemented complex business logic and database solutions.",
+      "Collaborated with stakeholders to gather requirements and deliver solutions.",
+    ],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "jQuery", "Bootstrap"],
+  },
+  {
+    period: "June 2021 — Jan 2023",
+    title: "Software Developer",
+    company: "Sacred Heart Hospital of Malolos Inc.",
+    location: "Malolos City",
+    description: [
+      "Built and maintained healthcare management systems.",
+      "Developed full-stack web applications using ASP.Net MVC.",
+      "Worked on database design and query optimization.",
+    ],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "JavaScript", "HTML/CSS"],
   },
 ]
 
@@ -45,11 +71,8 @@ export function Experience() {
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Link
+            <div
               key={index}
-              href={exp.url}
-              target="_blank"
-              rel="noopener noreferrer"
               className="group block rounded-lg p-6 transition-all hover:bg-secondary/50"
             >
               <div className="grid gap-4 lg:grid-cols-4">
@@ -57,16 +80,22 @@ export function Experience() {
                   {exp.period}
                 </div>
                 <div className="lg:col-span-3 space-y-3">
-                  <div className="flex items-center gap-2">
+                  <div>
                     <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {exp.title} · {exp.company}
+                      {exp.title}
                     </h3>
-                    <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <p className="text-sm text-primary">{exp.company}</p>
+                    <p className="text-xs text-muted-foreground">{exp.location}</p>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {exp.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
+                  <ul className="space-y-1">
+                    {exp.description.map((item, i) => (
+                      <li key={i} className="text-muted-foreground text-sm leading-relaxed flex gap-2">
+                        <span className="text-primary mt-1.5 shrink-0">{">"}</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-2 pt-2">
                     {exp.technologies.map((tech) => (
                       <Badge
                         key={tech}
@@ -79,16 +108,23 @@ export function Experience() {
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
-        <div className="mt-12">
+        <div className="mt-12 flex items-center gap-6">
+          <Button asChild variant="outline" className="font-medium">
+            <Link href="/resume.pdf" target="_blank" download>
+              <Download className="mr-2 h-4 w-4" />
+              Download Full Resume
+            </Link>
+          </Button>
           <Link
             href="/resume.pdf"
+            target="_blank"
             className="inline-flex items-center gap-2 text-foreground font-medium hover:text-primary transition-colors group"
           >
-            View Full Resume
+            View Resume
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </div>
