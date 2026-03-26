@@ -39,57 +39,57 @@ const hospitalProjects = [
   {
     title: "Room Management System",
     description: "Web-based system for hospital room allocation, tracking, and management.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "Queuing System",
     description: "Patient queuing and management system for improved hospital workflow.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "Sacred Heart Website Revamp",
     description: "Complete redesign and development of the hospital's official website.",
-    technologies: ["ASP.Net MVC", "C#", "Bootstrap"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "Document Management System",
     description: "Digital document storage, retrieval, and management for hospital records.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "IT Ticketing System",
     description: "Internal ticketing system for IT support requests and issue tracking.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "Clinical System",
     description: "Comprehensive clinical management system for patient care and records.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "Billing Portal",
     description: "Patient billing and payment management portal with reporting features.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "One Login",
     description: "Single sign-on solution for unified access across hospital systems.",
-    technologies: ["ASP.Net MVC", "C#", "Authentication"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "Administrator Access",
     description: "Role-based access control system for hospital administration.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "HR E-Learning",
     description: "E-learning platform for hospital staff training and development.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "Central Ticketing",
     description: "Centralized ticketing system for hospital-wide issue management.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    technologies: ["ASP.Net MVC", "C#", "MS SQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   {
     title: "ER Decking System",
@@ -125,7 +125,7 @@ const academicProjects = [
   {
     title: "Electronic Cafeteria",
     description: "Point-of-sale and inventory management system for cafeteria operations.",
-    technologies: ["VB Forms", "Database"],
+    technologies: ["VB Forms", "Access"],
   },
   {
     title: "Plantita Halamanan",
@@ -135,7 +135,7 @@ const academicProjects = [
   {
     title: "Payroll System (OJT)",
     description: "Payroll management system developed during internship at Chooseyourshoes Ph Inc.",
-    technologies: ["C# Windows Forms", "MS SQL"],
+    technologies: ["VB Forms", "Access"],
   },
 ]
 
@@ -201,6 +201,7 @@ export function Projects() {
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-2 mb-2">
                     <Folder className="h-5 w-5 text-primary" />
+                    <Badge variant="secondary" className="text-xs">Full Stack Developer</Badge>
                   </div>
                   <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
                     {project.title}
@@ -226,6 +227,7 @@ export function Projects() {
         {/* JotForm Projects */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-6">
+            <Badge variant="outline" className="text-primary border-primary">SHHMI</Badge>
             <Badge variant="outline" className="text-primary border-primary">Automation</Badge>
             <h3 className="text-lg font-semibold text-foreground">JotForm Workflow Automations</h3>
           </div>
@@ -238,6 +240,7 @@ export function Projects() {
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-2 mb-2">
                     <Folder className="h-5 w-5 text-primary" />
+                    <Badge variant="secondary" className="text-xs">Developer</Badge>
                   </div>
                   <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
                     {project.title}
@@ -275,6 +278,7 @@ export function Projects() {
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-2 mb-2">
                     <Folder className="h-5 w-5 text-primary" />
+
                   </div>
                   <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
                     {project.title}
