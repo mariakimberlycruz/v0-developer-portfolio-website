@@ -6,37 +6,31 @@ const felcoProjects = [
   {
     title: "Performance Dashboard",
     description: "Backend development for performance analytics dashboard, providing real-time insights and KPI tracking.",
-    position: "Backend Developer",
     technologies: ["Python", "MS SQL"],
   },
   {
     title: "Sales and Return System",
     description: "Backend system for managing sales transactions and product returns with data integrity.",
-    position: "Backend Developer",
     technologies: ["Python", "MS SQL"],
   },
   {
     title: "Expense Revamp",
     description: "Complete backend overhaul of the expense management system for improved efficiency.",
-    position: "Backend Developer",
     technologies: ["Python", "MS SQL"],
   },
   {
     title: "Product Carousel",
     description: "Backend implementation for dynamic product display and catalog management.",
-    position: "Backend Developer",
     technologies: ["Python", "MS SQL"],
   },
   {
     title: "Performance Dashboard Phase 2",
     description: "Extended features and optimizations for the performance analytics platform.",
-    position: "Backend Developer",
     technologies: ["Python", "MS SQL"],
   },
   {
     title: "Main Sync Revamp",
     description: "Backend system for synchronizing data across multiple platforms and databases.",
-    position: "Backend Developer",
     technologies: ["Python", "MS SQL"],
   },
 ]
@@ -169,7 +163,7 @@ export function Projects() {
                 <CardHeader className="pb-2">
                   <div className="flex items-center gap-2 mb-2">
                     <Folder className="h-5 w-5 text-primary" />
-                    <Badge variant="secondary" className="text-xs">Backend</Badge>
+                    <Badge variant="secondary" className="text-xs">Backend Developer</Badge>
                   </div>
                   <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
                     {project.title}
