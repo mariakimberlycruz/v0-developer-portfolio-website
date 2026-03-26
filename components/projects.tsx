@@ -6,32 +6,38 @@ const felcoProjects = [
   {
     title: "Performance Dashboard",
     description: "Backend development for performance analytics dashboard, providing real-time insights and KPI tracking.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    position: "Developer",
+    technologies: ["Python", "MS SQL"],
   },
   {
     title: "Sales and Return System",
     description: "Backend system for managing sales transactions and product returns with data integrity.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    position: "Developer",
+    technologies: ["Python", "MS SQL"],
   },
   {
     title: "Expense Revamp",
     description: "Complete backend overhaul of the expense management system for improved efficiency.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    position: "Developer",
+    technologies: ["Python", "MS SQL"],
   },
   {
     title: "Product Carousel",
     description: "Backend implementation for dynamic product display and catalog management.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    position: "Developer",
+    technologies: ["Python", "MS SQL"],
   },
   {
     title: "Performance Dashboard Phase 2",
     description: "Extended features and optimizations for the performance analytics platform.",
-    technologies: ["ASP.Net MVC", "C#", "MS SQL"],
+    position: "Developer",
+    technologies: ["Python", "MS SQL"],
   },
   {
     title: "Main Sync Revamp",
     description: "Backend system for synchronizing data across multiple platforms and databases.",
-    technologies: ["ASP.Net MVC", "C#", "Data Sync"],
+    position: "Developer",
+    technologies: ["Python", "MS SQL"],
   },
 ]
 
