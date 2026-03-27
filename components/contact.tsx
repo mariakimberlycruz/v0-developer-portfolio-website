@@ -11,7 +11,7 @@ export function Contact() {
         <p className="text-muted-foreground leading-relaxed mb-6 text-pretty">
           {"I'm currently open to new opportunities and would love to hear from you. Whether you have a question, a project idea, or just want to connect, feel free to reach out!"}
         </p>
-        
+
         <div className="flex flex-col items-center gap-3 mb-10 text-muted-foreground text-sm">
           <div className="flex items-center gap-2">
             <MapPin className="h-4 w-4 text-primary" />
@@ -22,7 +22,7 @@ export function Contact() {
             <span>+63 955 910 9786</span>
           </div>
         </div>
-        
+
         <Button asChild size="lg" className="font-medium">
           <Link href="mailto:kimcruz019@gmail.com">
             <Mail className="mr-2 h-5 w-5" />
