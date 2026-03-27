@@ -28,20 +28,18 @@ export function About() {
   return (
     <section id="about" className="py-24 px-6 lg:px-8" ref={ref}>
       <div className="mx-auto max-w-4xl">
-        <div 
-          className={`flex items-center gap-4 mb-12 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-          }`}
+        <div
+          className={`flex items-center gap-4 mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}
         >
           <h2 className="text-2xl font-bold text-foreground">About Me</h2>
           <div className="flex-1 h-px bg-border" />
         </div>
 
         <div className="grid gap-12 lg:grid-cols-3">
-          <div 
-            className={`lg:col-span-2 space-y-4 transition-all duration-700 delay-100 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <div
+            className={`lg:col-span-2 space-y-4 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <p className="text-muted-foreground leading-relaxed">
               {"I'm an experienced IT Software Engineer with a Bachelor of Science in Computer Engineering from Dr. Yanga's College, Inc. (2015-2020). I specialize in software development, database architecture, and enterprise system integration."}
@@ -54,10 +52,9 @@ export function About() {
             </p>
           </div>
 
-          <div 
-            className={`space-y-4 transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <div
+            className={`space-y-4 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <h3 className="text-lg font-semibold text-foreground">Education</h3>
             <div className="space-y-2 p-4 rounded-lg bg-secondary/50 border border-border hover:border-primary/50 transition-colors">
@@ -69,20 +66,18 @@ export function About() {
         </div>
 
         <div className="mt-16 space-y-8">
-          <h3 
-            className={`text-xl font-semibold text-foreground transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <h3
+            className={`text-xl font-semibold text-foreground transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             Skills & Expertise
           </h3>
           <div className="grid gap-8 md:grid-cols-2">
             {skillCategories.map((category, categoryIndex) => (
-              <div 
-                key={category.title} 
-                className={`space-y-3 transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
+              <div
+                key={category.title}
+                className={`space-y-3 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                  }`}
                 style={{ transitionDelay: `${400 + categoryIndex * 100}ms` }}
               >
                 <h4 className="text-sm font-medium text-primary">{category.title}</h4>
@@ -92,7 +87,7 @@ export function About() {
                       key={skill}
                       variant="secondary"
                       className="bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all hover:scale-105 cursor-default"
-                      style={{ 
+                      style={{
                         animationDelay: `${skillIndex * 50}ms`,
                       }}
                     >
