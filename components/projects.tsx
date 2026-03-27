@@ -1,6 +1,9 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Folder } from "lucide-react"
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const felcoProjects = [
   {
@@ -139,7 +142,43 @@ const academicProjects = [
   },
 ]
 
+function ProjectCard({ project, index, badge }: { project: { title: string; description: string; technologies: string[] }; index: number; badge: string }) {
+  return (
+    <Card
+      className="bg-card border-border hover:border-primary/50 transition-all duration-300 group hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
+      style={{ animationDelay: `${index * 50}ms` }}
+    >
+      <CardHeader className="pb-2">
+        <div className="flex items-center gap-2 mb-2">
+          <Folder className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
+          <Badge variant="secondary" className="text-xs">{badge}</Badge>
+        </div>
+        <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
+          {project.title}
+        </CardTitle>
+        <CardDescription className="text-sm text-muted-foreground">
+          {project.description}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="pt-0">
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <span key={tech} className="text-xs font-mono text-muted-foreground group-hover:text-primary/70 transition-colors">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
 export function Projects() {
+  const { ref: felcoRef, isVisible: felcoVisible } = useScrollAnimation()
+  const { ref: hospitalRef, isVisible: hospitalVisible } = useScrollAnimation()
+  const { ref: jotformRef, isVisible: jotformVisible } = useScrollAnimation()
+  const { ref: academicRef, isVisible: academicVisible } = useScrollAnimation()
+
   return (
     <section id="projects" className="py-24 px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -149,154 +188,102 @@ export function Projects() {
         </div>
 
         {/* FELCO Projects */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-6">
-            <Badge variant="outline" className="text-primary border-primary">FELCO</Badge>
+        <div className="mb-16" ref={felcoRef}>
+          <div 
+            className={`flex items-center gap-3 mb-6 transition-all duration-700 ${
+              felcoVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}
+          >
+            <Badge variant="outline" className="text-primary border-primary animate-pulse">FELCO</Badge>
             <h3 className="text-lg font-semibold text-foreground">Firefly Electric and Lighting Corporation</h3>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {felcoProjects.map((project, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-card border-border hover:border-primary/50 transition-all group"
+                className={`transition-all duration-500 ${
+                  felcoVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Folder className="h-5 w-5 text-primary" />
-                    <Badge variant="secondary" className="text-xs">Backend Developer</Badge>
-                  </div>
-                  <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm text-muted-foreground">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span key={tech} className="text-xs font-mono text-muted-foreground">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                <ProjectCard project={project} index={index} badge="Backend Developer" />
+              </div>
             ))}
           </div>
         </div>
 
         {/* Hospital Projects */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-6">
+        <div className="mb-16" ref={hospitalRef}>
+          <div 
+            className={`flex items-center gap-3 mb-6 transition-all duration-700 ${
+              hospitalVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}
+          >
             <Badge variant="outline" className="text-primary border-primary">SHHMI</Badge>
             <h3 className="text-lg font-semibold text-foreground">Sacred Heart Hospital of Malolos Inc.</h3>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {hospitalProjects.map((project, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-card/50 border-border hover:border-primary/50 transition-all group"
+                className={`transition-all duration-500 ${
+                  hospitalVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${index * 50}ms` }}
               >
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Folder className="h-5 w-5 text-primary" />
-                    <Badge variant="secondary" className="text-xs">Full Stack Developer</Badge>
-                  </div>
-                  <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm text-muted-foreground">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span key={tech} className="text-xs font-mono text-muted-foreground">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                <ProjectCard project={project} index={index} badge="Full Stack Developer" />
+              </div>
             ))}
           </div>
         </div>
 
         {/* JotForm Projects */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-6">
+        <div className="mb-16" ref={jotformRef}>
+          <div 
+            className={`flex items-center gap-3 mb-6 transition-all duration-700 ${
+              jotformVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}
+          >
             <Badge variant="outline" className="text-primary border-primary">SHHMI</Badge>
             <Badge variant="outline" className="text-primary border-primary">Automation</Badge>
             <h3 className="text-lg font-semibold text-foreground">JotForm Workflow Automations</h3>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {jotformProjects.map((project, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-card/50 border-border hover:border-primary/50 transition-all group"
+                className={`transition-all duration-500 ${
+                  jotformVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Folder className="h-5 w-5 text-primary" />
-                    <Badge variant="secondary" className="text-xs">Developer</Badge>
-                  </div>
-                  <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm text-muted-foreground">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span key={tech} className="text-xs font-mono text-muted-foreground">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                <ProjectCard project={project} index={index} badge="Developer" />
+              </div>
             ))}
           </div>
         </div>
 
         {/* Academic Projects */}
-        <div>
-          <div className="flex items-center gap-3 mb-6">
+        <div ref={academicRef}>
+          <div 
+            className={`flex items-center gap-3 mb-6 transition-all duration-700 ${
+              academicVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
+            }`}
+          >
             <Badge variant="outline" className="text-primary border-primary">Academic</Badge>
             <h3 className="text-lg font-semibold text-foreground">{"Dr. Yanga's College, Inc. & OJT"}</h3>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {academicProjects.map((project, index) => (
-              <Card
+              <div
                 key={index}
-                className="bg-card/50 border-border hover:border-primary/50 transition-all group"
+                className={`transition-all duration-500 ${
+                  academicVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <CardHeader className="pb-2">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Folder className="h-5 w-5 text-primary" />
-
-                  </div>
-                  <CardTitle className="text-base text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm text-muted-foreground">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span key={tech} className="text-xs font-mono text-muted-foreground">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                <ProjectCard project={project} index={index} badge="Student" />
+              </div>
             ))}
           </div>
         </div>

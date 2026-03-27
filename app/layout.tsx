@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 
 const inter = Inter({ 
@@ -14,9 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Your Name | Software Developer',
-  description: 'Full-stack developer specializing in building exceptional digital experiences with modern web technologies.',
-  keywords: ['developer', 'software engineer', 'full-stack', 'react', 'nextjs', 'typescript'],
+  title: 'Ma. Kimberly Cruz | IT Software Engineer',
+  description: 'IT Software Engineer specializing in full-stack development, system development, and building exceptional digital experiences.',
+  keywords: ['developer', 'software engineer', 'full-stack', 'react', 'nextjs', 'typescript', 'philippines'],
 }
 
 export default function RootLayout({
@@ -25,9 +26,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased">
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
