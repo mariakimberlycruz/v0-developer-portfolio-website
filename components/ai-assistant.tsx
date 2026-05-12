@@ -5,7 +5,7 @@ import { DefaultChatTransport } from 'ai'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Send, X, MessageCircle } from 'lucide-react'
+import { Send, X, MessageCircle, Mail } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 
 export function AIAssistant() {
@@ -19,6 +19,10 @@ export function AIAssistant() {
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     handleSubmit(e)
+  }
+
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:kimcruz019@gmail.com'
   }
 
   return (
@@ -36,7 +40,7 @@ export function AIAssistant() {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 z-50 w-96 h-[600px] flex flex-col border-primary/20 shadow-2xl bg-card">
+        <Card className="fixed bottom-6 right-6 z-50 w-full sm:w-96 h-screen sm:h-[600px] flex flex-col border-primary/20 shadow-2xl bg-card mx-0 sm:mx-0 rounded-none sm:rounded-lg">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border bg-primary/5">
             <div className="flex items-center gap-2">
@@ -103,27 +107,34 @@ export function AIAssistant() {
             )}
           </div>
 
-          {/* Input */}
-          <form
-            onSubmit={handleFormSubmit}
-            className="border-t border-border p-3 flex gap-2"
-          >
-            <Input
-              value={input}
-              onChange={handleInputChange}
-              placeholder="Ask me anything..."
-              disabled={isLoading}
-              className="flex-1"
-            />
+          {/* Action Buttons */}
+          <div className="border-t border-border p-3 flex gap-2 flex-col">
+            <form onSubmit={handleFormSubmit} className="flex gap-2">
+              <Input
+                value={input}
+                onChange={handleInputChange}
+                placeholder="Ask me anything..."
+                disabled={isLoading}
+                className="flex-1"
+              />
+              <Button
+                type="submit"
+                disabled={isLoading || !input.trim()}
+                size="icon"
+                className="shrink-0"
+              >
+                <Send className="h-4 w-4" />
+              </Button>
+            </form>
             <Button
-              type="submit"
-              disabled={isLoading || !input.trim()}
-              size="icon"
-              className="shrink-0"
+              onClick={handleEmailClick}
+              variant="outline"
+              className="w-full gap-2 text-sm"
             >
-              <Send className="h-4 w-4" />
+              <Mail className="h-4 w-4" />
+              Send Email to Maria
             </Button>
-          </form>
+          </div>
         </Card>
       )}
     </>
