@@ -9,7 +9,7 @@ export function Hero() {
   const [mounted, setMounted] = useState(false)
   const [typedText, setTypedText] = useState("")
   const [showWhatsNext, setShowWhatsNext] = useState(false)
-  const fullText = "IT Software Engineer."
+  const fullText = "IT Mid Software Engineer 2."
 
   useEffect(() => {
     setMounted(true)
