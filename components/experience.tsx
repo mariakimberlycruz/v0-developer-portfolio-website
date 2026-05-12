@@ -8,13 +8,13 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const experiences = [
   {
-    period: "June 2025 — Present",
-    title: "IT Software Engineer 2",
+    period: "June 23, 2025 — Present",
+    title: "IT Mid Software Engineer 2",
     company: "Firefly Electric and Lighting Corporation (FELCO)",
     location: "Ermita Manila",
     description: [
       "Architected and optimized complex database systems for web and mobile applications.",
-      "Led database normalization, indexing, and query optimization, reducing response times.",
+      "Led database normalization, indexing, and query optimization.",
       "Designed and maintained secure RESTful APIs for internal and third-party integrations.",
       "Managed Data Warehouse architecture, ETL pipelines, and reporting frameworks.",
       "Provided technical guidance and mentoring on database design and API security.",
@@ -23,7 +23,7 @@ const experiences = [
     technologies: ["ASP.Net MVC", "C#", "MS SQL", "RESTful APIs", "Data Warehouse", "ETL"],
   },
   {
-    period: "May 2024 — June 2025",
+    period: "May 2024 — June 16, 2025",
     title: "IT Supervisor - Software Development",
     company: "Sacred Heart Hospital of Malolos Inc.",
     location: "Malolos City",
@@ -36,7 +36,7 @@ const experiences = [
     technologies: ["ASP.Net MVC", "C#", "MS SQL", "Team Leadership", "System Architecture"],
   },
   {
-    period: "Jan 2023 — May 2024",
+    period: "January 2023 — May 2024",
     title: "Sr. Software Developer",
     company: "Sacred Heart Hospital of Malolos Inc.",
     location: "Malolos City",
@@ -48,7 +48,7 @@ const experiences = [
     technologies: ["ASP.Net MVC", "C#", "MS SQL", "jQuery", "Bootstrap"],
   },
   {
-    period: "June 2021 — Jan 2023",
+    period: "June 2021 — January 2023",
     title: "Software Developer",
     company: "Sacred Heart Hospital of Malolos Inc.",
     location: "Malolos City",

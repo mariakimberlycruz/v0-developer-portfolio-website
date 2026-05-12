@@ -10,7 +10,7 @@ const skillCategories = [
   },
   {
     title: "Databases & Data Management",
-    skills: ["MS SQL", "MySQL", "Data Warehousing", "Data Modeling", "Query Optimization", "Database Architecture"],
+    skills: ["MS SQL", "MySQL", "Data Warehousing", "Data Modeling", "Query Optimization", "Database Architecture", "ETL"],
   },
   {
     title: "Hardware & Electronics",
